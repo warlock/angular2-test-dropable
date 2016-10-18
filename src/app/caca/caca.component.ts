@@ -11,7 +11,7 @@ export class CacaComponent implements OnInit {
   @Input() hero: String;
   lol: any;
   errorMessage: string;
-  constructor() { }
+  constructor(private service: TestService) { }
 
   ngOnInit() {
     this.service.getTest().subscribe(
