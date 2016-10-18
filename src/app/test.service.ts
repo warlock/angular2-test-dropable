@@ -9,6 +9,13 @@ export class TestService {
 
   constructor(private http: Http) { }
 
+  getTest(): Observable<any> {
+    return this.http.get(`${this.host}`)
+                .map(this.extractData)
+                .catch(this.handleError);
+  }
+
+
   private extractData(res: Response) {
     let body = res.json();
     return body || { };
