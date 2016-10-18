@@ -5,8 +5,9 @@ import 'rxjs/Rx';
 
 @Injectable()
 export class TestService {
+  private host = "http://echo.jsontest.com/key/value/one/two"
 
-  constructor() { }
+  constructor(private http: Http) { }
 
   private extractData(res: Response) {
     let body = res.json();
